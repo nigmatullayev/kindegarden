@@ -1,0 +1,47 @@
+[
+  {
+    "model": "inventory.product",
+    "pk": 1,
+    "fields": {
+      "name": "Картофель",
+      "quantity": 10000,
+      "delivery_date": "2024-05-01",
+      "min_threshold": 2000
+    }
+  },
+  {
+    "model": "inventory.product",
+    "pk": 2,
+    "fields": {
+      "name": "Морковь",
+      "quantity": 5000,
+      "delivery_date": "2024-05-01",
+      "min_threshold": 1000
+    }
+  },
+  {
+    "model": "recipes.recipe",
+    "pk": 1,
+    "fields": {
+      "name": "Овощное рагу"
+    }
+  },
+  {
+    "model": "recipes.recipeingredient",
+    "pk": 1,
+    "fields": {
+      "recipe": 1,
+      "product": 1,
+      "quantity": 300
+    }
+  },
+  {
+    "model": "recipes.recipeingredient",
+    "pk": 2,
+    "fields": {
+      "recipe": 1,
+      "product": 2,
+      "quantity": 100
+    }
+  }
+] 

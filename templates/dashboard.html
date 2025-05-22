@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block authenticated_content %}
+<div class="row">
+  <div class="col-md-6 mb-4">
+    <div class="card">
+      <div class="card-body">
+        <h2>Продукты</h2>
+        <ul id="product-list" class="list-group"></ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 mb-4">
+    <div class="card">
+      <div class="card-body">
+        <h2>Рецепты</h2>
+        <ul id="recipe-list" class="list-group"></ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 mb-4">
+    <div class="card">
+      <div class="card-body">
+        <h2>Уведомления</h2>
+        <ul id="notification-list" class="list-group"></ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 mb-4">
+    <div class="card">
+      <div class="card-body">
+        <h2>Подача блюд</h2>
+        <form id="serve-meal-form">
+          <div class="mb-3">
+            <label for="recipe-select" class="form-label">Рецепт</label>
+            <select id="recipe-select" class="form-select"></select>
+          </div>
+          <div class="mb-3">
+            <label for="portions" class="form-label">Количество порций</label>
+            <input type="number" id="portions" class="form-control" min="1" value="1">
+          </div>
+          <button type="submit" class="btn btn-primary">Подать</button>
+          <div id="serve-meal-result" class="mt-2"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 mb-4">
+    <div class="card">
+      <div class="card-body">
+        <h2>Расход ингредиентов</h2>
+        <canvas id="consumptionChart"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 mb-4">
+    <div class="card">
+      <div class="card-body">
+        <h2>Отчёт за месяц</h2>
+        <canvas id="reportChart"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

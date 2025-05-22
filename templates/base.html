@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bog'cha Inventory - система управления инвентарем для детского сада">
+    <meta name="keywords" content="инвентарь, детский сад, управление, Bog'cha">
+    <title>Bog'cha Inventory</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+{% if user.is_authenticated %}
+  <div class="sidebar bg-primary">
+    <div class="sidebar-header d-flex align-items-center mb-4">
+      <span class="sidebar-icon me-2">
+        <!-- SVG иконка счастливого ребёнка -->
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="16" fill="#fff"/>
+          <circle cx="16" cy="16" r="14" fill="#8B0000"/>
+          <circle cx="12" cy="14" r="2" fill="#fff"/>
+          <circle cx="20" cy="14" r="2" fill="#fff"/>
+          <path d="M12 20c1.5 2 6.5 2 8 0" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="sidebar-title text-white fw-bold fs-5">Bog'cha Inventory</span>
+    </div>
+    <ul class="nav flex-column">
+        <li class="nav-item mb-2"><a href="/dashboard/" class="nav-link text-white">Дашборд</a></li>
+        <li class="nav-item mb-2"><a href="/inventory/" class="nav-link text-white">Инвентарь</a></li>
+        <li class="nav-item mb-2"><a href="/reports/" class="nav-link text-white">Отчёты</a></li>
+        <li class="nav-item mb-2"><a href="/users/" class="nav-link text-white">Пользователи</a></li>
+        <li class="nav-item mt-4">
+            <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-outline-light w-100">Выйти</button>
+            </form>
+        </li>
+{#        <li class="nav-item mt-4"><a href="/logout/" class="btn btn-outline-light w-100">Выйти</a></li>#}
+    </ul>
+    <div class="sidebar-user mt-auto text-white-50 small ms-1">{{ user.username }}</div>
+  </div>
+  <div class="main-content">
+    <div class="container-fluid py-4">
+      {% block authenticated_content %}{% endblock %}
+    </div>
+  </div>
+{% else %}
+  <div class="container py-4">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        {% block unauthenticated_content %}{% endblock %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/static/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  window.userRole = "{% if user.is_authenticated %}{{ user.groups.first.name|default:'None' }}{% else %}None{% endif %}";
+</script>
+</body>
+</html> 

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block authenticated_content %}
+<div class="card">
+  <div class="card-body">
+    <h2>Отчёты</h2>
+    <div class="mb-3">
+      <label for="report-month" class="form-label">Месяц</label>
+      <input type="month" id="report-month" class="form-control">
+    </div>
+    <div class="table-responsive">
+      <table id="report-table" class="table table-hover">
+        <thead>
+          <tr>
+            <th>Год</th>
+            <th>Месяц</th>
+            <th>Приготовлено</th>
+            <th>Возможно</th>
+            <th>Отклонение (%)</th>
+            <th>Флаг</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div style="max-width:400px; margin:auto;">
+      <canvas id="reportChart" width="400" height="300"></canvas>
+    </div>
+    <div id="report-empty-message" class="text-center text-muted mt-3" style="display:none;">Нет данных за выбранный месяц</div>
+  </div>
+</div>
+{% endblock %} 

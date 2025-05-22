@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block authenticated_content %}
+<div class="card">
+  <div class="card-body">
+    <h2>Пользователи</h2>
+    <div class="table-responsive">
+      <table id="user-table" class="table table-hover">
+        <thead>
+          <tr>
+            <th>Имя пользователя</th>
+            <th>Роль</th>
+            <th>Действия</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %} 

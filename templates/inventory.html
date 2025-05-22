@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block authenticated_content %}
+<div class="card">
+  <div class="card-body">
+    <h2>Инвентарь</h2>
+    <div class="mb-3">
+      <input type="text" id="inventory-search" class="form-control" placeholder="Поиск...">
+    </div>
+    <div class="table-responsive">
+      <table id="inventory-table" class="table table-hover">
+        <thead>
+          <tr>
+            <th data-sort="name">Название</th>
+            <th data-sort="quantity">Остаток</th>
+            <th data-sort="delivery_date">Дата поставки</th>
+            <th data-sort="min_threshold">Мин. порог</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <button id="export-inventory" class="btn btn-primary">Экспорт в CSV</button>
+  </div>
+</div>
+{% endblock %} 
