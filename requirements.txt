@@ -16,12 +16,14 @@ django-js-asset==3.1.2
 django-mptt==0.17.0
 django_roles==0.0.4
 djangorestframework==3.14.0
+gunicorn==23.0.0
 kombu==5.5.3
 mysqlclient==2.2.7
+packaging==25.0
 pillow==11.2.1
 prompt_toolkit==3.0.51
 pycparser==2.22
-PyMySQL==1.1.0
+PyMySQL==1.1.1
 python-dateutil==2.9.0.post0
 python-dotenv==1.0.1
 pytz==2025.2
