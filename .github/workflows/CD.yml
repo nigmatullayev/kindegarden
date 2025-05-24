@@ -22,7 +22,7 @@ jobs:
         passphrase: ${{ secrets.PASSPHRASE }}
 
         script: |
-          cd /home/ubuntu/project-for-kindegarden  # loyihani turgan joy
+          cd /home/ubuntu/kindegarden
           git pull origin master
           source .venv/bin/activate
           pip install -r requirements.txt
