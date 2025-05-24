@@ -49,9 +49,9 @@ jobs:
 
       - name: Set environment variables
         run: |
-          echo "DATABASE_NAME=kindegarden_test" >> $GITHUB_ENV
-          echo "DATABASE_USER=testuser" >> $GITHUB_ENV
-          echo "DATABASE_PASSWORD=testpassword" >> $GITHUB_ENV
+          echo "DATABASE_NAME=kindergarten_db" >> $GITHUB_ENV
+          echo "DATABASE_USER=kindergarten_user" >> $GITHUB_ENV
+          echo "DATABASE_PASSWORD=19892219Bek!" >> $GITHUB_ENV
           echo "DATABASE_HOST=127.0.0.1" >> $GITHUB_ENV
 
       - name: Run migrations
