@@ -13,10 +13,10 @@ jobs:
       mysql:
         image: mysql:8.0
         env:
-          MYSQL_DATABASE: kindegarden_test
-          MYSQL_USER: testuser
-          MYSQL_PASSWORD: testpassword
-          MYSQL_ROOT_PASSWORD: rootpassword
+          MYSQL_DATABASE: kindergarten_db
+          MYSQL_USER: kindergarten_user
+          MYSQL_PASSWORD: 19892219Bek!
+          MYSQL_ROOT_PASSWORD: 19892219Bek!
         ports:
           - 3306:3306
         options: >-
